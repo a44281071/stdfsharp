@@ -37,22 +37,16 @@ namespace KA.StdfSharp.Record.Field
             this.record = record;
             Reset();
         }
-        
+
         /// <summary>
         /// Returns the size in bytes of this field.
         /// </summary>
-        public override ushort Size
-        {
-            get { return Convert.ToUInt16(Value.Length + 1); }
-        }
+        public override ushort Size => Convert.ToUInt16(Value.Length + 1);
 
         /// <summary>
         /// Returns the parent record of this field.
         /// </summary>
-        protected R ParentRecord
-        {
-            get { return record; }
-        }
+        protected R ParentRecord => record;
 
         /// <summary>
         /// Reads this field's value from the binary reader.

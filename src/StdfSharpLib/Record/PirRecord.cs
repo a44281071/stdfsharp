@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: PirRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp
@@ -28,7 +28,7 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the PIR record of STDF
+    /// Part Information Record (PIR) 零件信息记录 （PIR）
     /// </summary>
     [StdfRecord(5, 10)]
     public sealed class PirRecord : StdfRecord
@@ -42,14 +42,8 @@ namespace KA.StdfSharp.Record
             AddField("SITE_NUM", siteNumber);
         }
 
-        public IField<byte> HeadNumber
-        {
-            get { return headNumber; }
-        }
+        public IField<byte> HeadNumber => headNumber;
 
-        public IField<byte> SiteNumber
-        {
-            get { return siteNumber; }
-        }
+        public IField<byte> SiteNumber => siteNumber;
     }
 }

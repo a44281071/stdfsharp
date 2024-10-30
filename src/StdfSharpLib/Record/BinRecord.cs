@@ -96,52 +96,34 @@ namespace KA.StdfSharp.Record
             }
         }
 
-		/// <summary>
-		/// Represents the head number
-		/// </summary> 
-        public IField<byte> HeadNumber
-        {
-            get { return headNumber; }
-        }
+        /// <summary>
+        /// Represents the head number
+        /// </summary> 
+        public IField<byte> HeadNumber => headNumber;
 
-		/// <summary>
-		/// Represents the site number
-		/// </summary> 
-        public IField<byte> SiteNumber
-        {
-            get { return siteNumber; }
-        }
+        /// <summary>
+        /// Represents the site number
+        /// </summary> 
+        public IField<byte> SiteNumber => siteNumber;
 
-		/// <summary>
-		/// Represents the bin number
-		/// </summary> 
-        public IField<ushort> Number
-        {
-            get { return number; }
-        }
+        /// <summary>
+        /// Represents the bin number
+        /// </summary> 
+        public IField<ushort> Number => number;
 
-		/// <summary>
-		/// Represents the parts count
-		/// </summary> 
-        public IField<uint> PartsCount
-        {
-            get { return partsCount; }
-        }
+        /// <summary>
+        /// Represents the parts count
+        /// </summary> 
+        public IField<uint> PartsCount => partsCount;
 
-		/// <summary>
-		/// Represents the status of the bin: passed, fail, unknown
-		/// </summary> 
-        public IField<char> PassFail
-        {
-            get { return passFail; }
-        }
+        /// <summary>
+        /// Represents the status of the bin: passed, fail, unknown
+        /// </summary> 
+        public IField<char> PassFail => passFail;
 
-		/// <summary>
-		/// Represents the name of the bin
-		/// </summary> 
-        public IField<string> Name
-        {
-            get { return name; }
-        }
+        /// <summary>
+        /// Represents the name of the bin
+        /// </summary> 
+        public IField<string> Name => name;
     }
 }

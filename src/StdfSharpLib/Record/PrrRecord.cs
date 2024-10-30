@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: PrrRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp
@@ -29,7 +29,8 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the PRR record of STDF
+    /// Part Results Record (PRR)
+    /// 零件结果记录 （PRR）
     /// </summary>
     [StdfRecord(5, 20)]
     public class PrrRecord : StdfRecord
@@ -117,111 +118,45 @@ namespace KA.StdfSharp.Record
             AddField(FieldName.PART_TXT.ToString(), partDescription);
             AddField(FieldName.PART_FIX.ToString(), partRepairInformation);
         }
-        
-        public bool SupersedePartIdSequence
-        {
-            get
-            {
-                return !(partFlag.EvaluateAnd((byte)PartFlagBit.SupersedePartIdSequence));
-            }
-        }
 
-        public bool SupersedeCoordinateSequence
-        {
-            get
-            {
-                return !(partFlag.EvaluateAnd((byte)PartFlagBit.SupersedeCoordinateSequence));
-            }
-        }
-        
-        public bool TestNormallyCompleted
-        {
-            get
-            {
-                return partFlag.EvaluateAnd((byte)PartFlagBit.TestNormallyCompleted);
-            }
-        }
-        
-        public bool PartPassed
-        {
-            get
-            {
-                return partFlag.EvaluateAnd((byte)PartFlagBit.TestFailed);
-            }
-        }
+        public bool SupersedePartIdSequence => !(partFlag.EvaluateAnd((byte)PartFlagBit.SupersedePartIdSequence));
 
-        public bool PassFailFlagValid
-        {
-            get
-            {
-                return partFlag.EvaluateAnd((byte)PartFlagBit.NoPassFailFlag);
-            }
-        }
+        public bool SupersedeCoordinateSequence => !(partFlag.EvaluateAnd((byte)PartFlagBit.SupersedeCoordinateSequence));
 
-        public IField<byte> HeadNumber
-        {
-            get { return headNumber; }
-        }
+        public bool TestNormallyCompleted => partFlag.EvaluateAnd((byte)PartFlagBit.TestNormallyCompleted);
 
-        public IField<byte> SiteNumber
-        {
-            get { return siteNumber; }
-        }
+        public bool PartPassed => partFlag.EvaluateAnd((byte)PartFlagBit.TestFailed);
 
-        public IField<ushort> TestExecutedCount
-        {
-            get { return testExecutedCount; }
-        }
+        public bool PassFailFlagValid => partFlag.EvaluateAnd((byte)PartFlagBit.NoPassFailFlag);
 
-        public IField<ushort> HardwareBin
-        {
-            get { return hardwareBin; }
-        }
+        public IField<byte> HeadNumber => headNumber;
 
-        public IField<ushort> SoftwareBin
-        {
-            get { return softwareBin; }
-        }
+        public IField<byte> SiteNumber => siteNumber;
 
-        public IField<short> XCoordinate
-        {
-            get { return xCoordinate; }
-        }
+        public IField<ushort> TestExecutedCount => testExecutedCount;
 
-        public IField<short> YCoordinate
-        {
-            get { return yCoordinate; }
-        }
+        public IField<ushort> HardwareBin => hardwareBin;
 
-        public IField<DateTime> ElapsedTestTime
-        {
-            get { return elapsedTestTime; }
-        }
+        public IField<ushort> SoftwareBin => softwareBin;
 
-        public IField<string> PartIdentification
-        {
-            get { return partIdentification; }
-        }
+        public IField<short> XCoordinate => xCoordinate;
 
-        public IField<string> PartDescription
-        {
-            get { return partDescription; }
-        }
+        public IField<short> YCoordinate => yCoordinate;
 
-        public IField<byte[]> PartRepairInformation
-        {
-            get { return partRepairInformation; }
-        }
+        public IField<DateTime> ElapsedTestTime => elapsedTestTime;
+
+        public IField<string> PartIdentification => partIdentification;
+
+        public IField<string> PartDescription => partDescription;
+
+        public IField<byte[]> PartRepairInformation => partRepairInformation;
 
         /// <summary>
         /// Represents the field PART_FLG of PRR record.
         /// </summary>
         /// <remarks>From STDF specification the first two bit must not be set both to 1. 
         /// So it possibile to check if it happens checking the validity of this field through <see cref="IField.Valid"/></remarks>
-        public IField<byte> PartFlag
-        {
-            get { return partFlag; }
-        }
+        public IField<byte> PartFlag => partFlag;
 
         private class PartFlagField : BitEncoded<PrrRecord>
         {

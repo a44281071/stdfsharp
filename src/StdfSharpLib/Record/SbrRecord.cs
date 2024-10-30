@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: SbrRecord.cs 11 2006-10-20 21:11:16Z outburst $
  * 
  * STDFSharp
@@ -26,7 +26,8 @@
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the SBR record of STDF.
+    /// Software Bin Record (SBR)
+    /// 软件箱记录 （SBR）
     /// </summary>
     [StdfRecord(1, 50)]
     public sealed class SbrRecord : BinRecord
@@ -51,9 +52,6 @@ namespace KA.StdfSharp.Record
             AddField(FieldName.SBIN_NAM.ToString(), Name);
         }
 
-        public override BinType BinType
-        {
-            get { return Record.BinType.Software; }
-        }
+        public override BinType BinType => Record.BinType.Software;
     }
 }

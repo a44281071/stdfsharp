@@ -42,10 +42,7 @@ namespace KA.StdfSharp.Record
         private readonly IStdfRecordFactory factory = StdfRecordFactory.Instance;
         private readonly Dictionary<byte, Dictionary<byte, StdfRecord>> recordsBuffer = new Dictionary<byte, Dictionary<byte, StdfRecord>>();
 
-        public static IStdfRecordFactory Instance
-        {
-            get { return instance; }
-        }
+        public static IStdfRecordFactory Instance => instance;
 
         #region IStdfRecordFactory Members
 

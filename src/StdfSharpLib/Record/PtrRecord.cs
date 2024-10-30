@@ -1,4 +1,4 @@
-/**
+﻿ /**
  * $Id: PtrRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp
@@ -29,7 +29,8 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the PTR record of STDF.
+    /// Parametric Test Record (PTR)
+    /// 参数测试记录 （PTR）
     /// </summary>
     [StdfRecordAttribute(15, 10)]
     public class PtrRecord : StdfRecord
@@ -179,61 +180,19 @@ namespace KA.StdfSharp.Record
                     ParentRecord[FieldName.RESULT.ToString()].Valid = false;
             }
 
-            public bool AlarmDetected
-            {
-                get
-                {
-                    return !EvaluateAnd((byte)TestFlagFieldBit.AlarmDetected);
-                }
-            }
+            public bool AlarmDetected => !EvaluateAnd((byte)TestFlagFieldBit.AlarmDetected);
 
-            public bool TestResultUnreliable
-            {
-                get
-                {
-                    return !EvaluateAnd((byte)TestFlagFieldBit.TestResultUnreliable);
-                }
-            }
+            public bool TestResultUnreliable => !EvaluateAnd((byte)TestFlagFieldBit.TestResultUnreliable);
 
-            public bool TimeoutOccurred
-            {
-                get
-                {
-                    return !EvaluateAnd((byte)TestFlagFieldBit.TimeoutOccurred);
-                }
-            }
+            public bool TimeoutOccurred => !EvaluateAnd((byte)TestFlagFieldBit.TimeoutOccurred);
 
-            public bool TestExecuted
-            {
-                get
-                {
-                    return EvaluateAnd((byte)TestFlagFieldBit.TestNotExecuted);
-                }
-            }
+            public bool TestExecuted => EvaluateAnd((byte)TestFlagFieldBit.TestNotExecuted);
 
-            public bool TestAborted
-            {
-                get
-                {
-                    return !EvaluateAnd((byte)TestFlagFieldBit.TestAborted);
-                }
-            }
+            public bool TestAborted => !EvaluateAnd((byte)TestFlagFieldBit.TestAborted);
 
-            public bool PassFailFlagValid
-            {
-                get
-                {
-                    return EvaluateAnd((byte)TestFlagFieldBit.NoPassFailFlag);
-                }
-            }
+            public bool PassFailFlagValid => EvaluateAnd((byte)TestFlagFieldBit.NoPassFailFlag);
 
-            public bool TestFailed
-            {
-                get
-                {
-                    return !EvaluateAnd((byte)TestFlagFieldBit.TestFailed);
-                }
-            }
+            public bool TestFailed => !EvaluateAnd((byte)TestFlagFieldBit.TestFailed);
 
             [Flags]
             private enum TestFlagFieldBit
@@ -298,14 +257,8 @@ namespace KA.StdfSharp.Record
             }
         }
 
-        public OptionalFlagsField OptionalFlag
-        {
-            get { return optionalFlags as OptionalFlagsField; }
-        }
+        public OptionalFlagsField OptionalFlag => optionalFlags as OptionalFlagsField;
 
-        public TestFlagsField TestFlags
-        {
-            get { return testFlags as TestFlagsField; }
-        }
+        public TestFlagsField TestFlags => testFlags as TestFlagsField;
     }
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: WirRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp
@@ -29,7 +29,8 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the WIR record of STDF
+    /// Wafer Information Record (WIR)
+    /// 晶圆信息记录 （WIR）
     /// </summary>
     [StdfRecord(2, 10)]
     public sealed class WirRecord : StdfRecord
@@ -47,24 +48,12 @@ namespace KA.StdfSharp.Record
             AddField("WAFER_ID", waferId);
         }
 
-        public IField<byte> HeadNumber
-        {
-            get { return headNumber; }
-        }
+        public IField<byte> HeadNumber => headNumber;
 
-        public IField<byte> SiteGroupNumber
-        {
-            get { return siteGroupNumber; }
-        }
+        public IField<byte> SiteGroupNumber => siteGroupNumber;
 
-        public IField<DateTime> StartDate
-        {
-            get { return startDate; }
-        }
+        public IField<DateTime> StartDate => startDate;
 
-        public IField<string> WaferId
-        {
-            get { return waferId; }
-        }
+        public IField<string> WaferId => waferId;
     }
 }

@@ -32,10 +32,7 @@ namespace KA.StdfSharp.Record.Field
         /// <summary>
         /// Returns the size in bytes of this field.
         /// </summary>
-        public override ushort Size
-        {
-            get { return sizeof(byte); }
-        }
+        public override ushort Size => sizeof(byte);
 
         /// <summary>
         /// Reads this field's value form the binary reader.

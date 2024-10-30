@@ -69,11 +69,8 @@ namespace KA.StdfSharp
             }
         }
 
-        public CpuType Type
-        {
-            get { return type; }
-        }
-        
+        public CpuType Type => type;
+
         public override bool Equals(object obj)
         {
             if (!(obj is Cpu))
@@ -101,13 +98,7 @@ namespace KA.StdfSharp
         /// Returns true if this cpu has little-endian endianess, otherwise false.
         /// </summary>
         /// <returns></returns>
-        public bool IsLittleEndian
-        {
-			get
-			{
-                return Endianess.IsLittleEndian(Type);
-			}
-        }
+        public bool IsLittleEndian => Endianess.IsLittleEndian(Type);
     }
     
     /// <summary>

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: FarRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp - Reading/writing STDF (Standard Test Data Format) library for .NET
@@ -29,7 +29,8 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the FAR record of STDF
+    /// File Attributes Record (FAR)
+    /// 文件属性记录 （FAR）
     /// </summary>
     [StdfRecord(0, 10)]
     public sealed class FarRecord : StdfRecord
@@ -58,25 +59,19 @@ namespace KA.StdfSharp.Record
                 cpuType.Value = (byte)value.Type;
             }
         }
-        
+
         /// <summary>
         /// Represents the CPU_TYPE field of FAR record. 
         /// CPU type that wrote this file.
         /// </summary>
         /// <value>The field which represents the raw value of cpu type. 
         /// For more meaningful information use <code><see cref="StdfSharp.Cpu">Cpu</see></code> property.</value>
-        public IField<byte> CpuType
-        {
-            get { return cpuType; }
-        }
+        public IField<byte> CpuType => cpuType;
 
         /// <summary>
         /// Represents the STDF_VER field of FAR record. 
         /// STDF version number.
         /// </summary>
-        public IField<byte> Version
-        {
-            get { return version; }
-        }
+        public IField<byte> Version => version;
     }
 }

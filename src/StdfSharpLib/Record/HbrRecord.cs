@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: HbrRecord.cs 11 2006-10-20 21:11:16Z outburst $
  * 
  * STDFSharp
@@ -26,7 +26,8 @@
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the HBR record of STDF.
+    /// Hardware Bin Record (HBR)
+    /// 硬件 Bin Record （HBR）
     /// </summary>
     [StdfRecord(1, 40)]
     public sealed class HbrRecord : BinRecord
@@ -51,9 +52,6 @@ namespace KA.StdfSharp.Record
             AddField(FieldName.HBIN_NAM.ToString(), Name);
         }
 
-        public override BinType BinType
-        {
-            get { return Record.BinType.Hardware; }
-        }
+        public override BinType BinType => Record.BinType.Hardware;
     }
 }

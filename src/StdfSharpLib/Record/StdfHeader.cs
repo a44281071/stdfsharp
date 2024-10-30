@@ -27,12 +27,9 @@ namespace KA.StdfSharp.Record
         private byte type;
         private byte subtype;
 
-        public static int Size
-        {
-            get { return sizeof(ushort) + 2 * sizeof(byte); }
-        }
-        
-        public ushort Lenght
+        public static int Size => sizeof(ushort) + 2 * sizeof(byte);
+
+        public ushort Length
         {
             get { return length; }
             set { length = value; }

@@ -84,9 +84,6 @@ namespace KA.StdfSharp.Record
         ///The error message that explains the reason for the exception, or an empty string("").
         ///</returns>
         ///<filterpriority>1</filterpriority>
-        public override string Message
-        {
-            get { return ToString(); }
-        }
+        public override string Message => ToString();
     }
 }

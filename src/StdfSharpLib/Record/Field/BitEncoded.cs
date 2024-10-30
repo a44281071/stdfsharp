@@ -42,11 +42,8 @@ namespace KA.StdfSharp.Record.Field
         /// <summary>
         /// Returns the parent record of this field.
         /// </summary>
-        protected R ParentRecord
-        {
-            get { return record; }
-        }
-        
+        protected R ParentRecord => record;
+
         /// <summary>
         /// Evaluate the bit AND of the passed byte with the value of the field.
         /// </summary>

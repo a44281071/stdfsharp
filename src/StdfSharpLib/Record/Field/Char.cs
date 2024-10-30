@@ -33,14 +33,11 @@ namespace KA.StdfSharp.Record.Field
         {
             Reset();
         }
-        
+
         /// <summary>
         /// Returns the size in bytes of this field.
         /// </summary>
-        public override ushort Size
-        {
-            get { return sizeof(char); }
-        }
+        public override ushort Size => sizeof(char);
 
         /// <summary>
         /// Validates the field estabilishing at once if the field is valid or not.

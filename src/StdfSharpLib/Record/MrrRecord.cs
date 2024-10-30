@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: MrrRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp - Reading/writing STDF (Standard Test Data Format) library for .NET
@@ -29,7 +29,8 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the MRR record of STDF
+    /// Master Results Record (MRR)
+    /// 主结果记录 （MRR）
     /// </summary>
     [StdfRecord(1, 20)]
     public sealed class MrrRecord : StdfRecord
@@ -46,25 +47,13 @@ namespace KA.StdfSharp.Record
             AddField("USR_DESC", userLotDescription);
             AddField("EXC_DESC", lotDescription);
         }
-        
-        public IField<DateTime> FinishTime
-        {
-            get { return finishTime; }
-        }
 
-        public IField<char[]> DispositionCode
-        {
-            get { return dispositionCode; }
-        }
+        public IField<DateTime> FinishTime => finishTime;
 
-        public IField<string> UserLotDescription
-        {
-            get { return userLotDescription; }
-        }
+        public IField<char[]> DispositionCode => dispositionCode;
 
-        public IField<string> LotDescription
-        {
-            get { return lotDescription; }
-        }
+        public IField<string> UserLotDescription => userLotDescription;
+
+        public IField<string> LotDescription => lotDescription;
     }
 }

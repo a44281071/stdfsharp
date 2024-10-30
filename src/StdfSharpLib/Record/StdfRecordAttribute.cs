@@ -50,17 +50,11 @@ namespace KA.StdfSharp.Record
         /// <summary>
         /// Represents the type information of a record
         /// </summary>
-        public byte Type
-        {
-            get { return type; }
-        }
+        public byte Type => type;
 
         /// <summary>
         /// Represents the subtype information of a record
         /// </summary>
-        public byte Subtype
-        {
-            get { return subtype; }
-        }
+        public byte Subtype => subtype;
     }
 }

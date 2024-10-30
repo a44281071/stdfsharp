@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: PcrRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp
@@ -28,7 +28,8 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the PCR record of STDF.
+    /// Part Count Record (PCR)
+    /// 部件计数记录 （PCR）
     /// </summary>
     [StdfRecord(1, 30)]
     public sealed class PcrRecord : StdfRecord
@@ -51,40 +52,19 @@ namespace KA.StdfSharp.Record
             AddField("GOOD_CNT", goodPartsCount);
             AddField("FUNC_CNT", functionalPartsCount);
         }
-        
-        public IField<byte> HeadNumber
-        {
-            get { return headNumber; }
-        }
 
-        public IField<byte> SiteNumber
-        {
-            get { return siteNumber; }
-        }
+        public IField<byte> HeadNumber => headNumber;
 
-        public IField<uint> PartCount
-        {
-            get { return partCount; }
-        }
+        public IField<byte> SiteNumber => siteNumber;
 
-        public IField<uint> RetestedPartsCount
-        {
-            get { return retestedPartsCount; }
-        }
+        public IField<uint> PartCount => partCount;
 
-        public IField<uint> AbortedTestCount
-        {
-            get { return abortedTestCount; }
-        }
+        public IField<uint> RetestedPartsCount => retestedPartsCount;
 
-        public IField<uint> GoodPartsCount
-        {
-            get { return goodPartsCount; }
-        }
+        public IField<uint> AbortedTestCount => abortedTestCount;
 
-        public IField<uint> FunctionalPartsCount
-        {
-            get { return functionalPartsCount; }
-        }
+        public IField<uint> GoodPartsCount => goodPartsCount;
+
+        public IField<uint> FunctionalPartsCount => functionalPartsCount;
     }
 }

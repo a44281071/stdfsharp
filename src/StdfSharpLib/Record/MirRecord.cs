@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: MirRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp - Reading/writing STDF (Standard Test Data Format) library for .NET
@@ -29,7 +29,8 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the MIR record of STDF
+    /// Master Information Record (MIR)
+    /// 主信息记录 （MIR）
     /// </summary>
     [StdfRecord(1, 10)]
     public sealed class MirRecord : StdfRecord
@@ -157,194 +158,80 @@ namespace KA.StdfSharp.Record
             AddField(FieldName.SUPR_NAM.ToString(), supervisorName);
         }
 
-        public IField<DateTime> JobSetupDate
-        {
-            get { return jobSetupDate; }
-        }
+        public IField<DateTime> JobSetupDate => jobSetupDate;
 
-        public IField<DateTime> FirstPartTestedDate
-        {
-            get { return firstPartTestedDate; }
-        }
+        public IField<DateTime> FirstPartTestedDate => firstPartTestedDate;
 
-        public IField<byte> TesterStationNumber
-        {
-            get { return testerStationNumber; }
-        }
+        public IField<byte> TesterStationNumber => testerStationNumber;
 
-        public IField<char> TestModeCode
-        {
-            get { return testModeCode; }
-        }
+        public IField<char> TestModeCode => testModeCode;
 
-        public IField<char[]> LotRetestCode
-        {
-            get { return lotRetestCode; }
-        }
+        public IField<char[]> LotRetestCode => lotRetestCode;
 
-        public IField<char[]> DataProtectionCode
-        {
-            get { return dataProtectionCode; }
-        }
+        public IField<char[]> DataProtectionCode => dataProtectionCode;
 
-        public IField<ushort> BurnTime
-        {
-            get { return burnTime; }
-        }
+        public IField<ushort> BurnTime => burnTime;
 
-        public IField<char> CommandModeCode
-        {
-            get { return commandModeCode; }
-        }
+        public IField<char> CommandModeCode => commandModeCode;
 
-        public IField<string> LotId
-        {
-            get { return lotId; }
-        }
+        public IField<string> LotId => lotId;
 
-        public IField<string> PartType
-        {
-            get { return partType; }
-        }
+        public IField<string> PartType => partType;
 
-        public IField<string> NodeName
-        {
-            get { return nodeName; }
-        }
+        public IField<string> NodeName => nodeName;
 
-        public IField<string> TesterType
-        {
-            get { return testerType; }
-        }
+        public IField<string> TesterType => testerType;
 
-        public IField<string> JobName
-        {
-            get { return jobName; }
-        }
+        public IField<string> JobName => jobName;
 
-        public IField<string> JobRevision
-        {
-            get { return jobRevision; }
-        }
+        public IField<string> JobRevision => jobRevision;
 
-        public IField<string> SubLotId
-        {
-            get { return subLotId; }
-        }
+        public IField<string> SubLotId => subLotId;
 
-        public IField<string> OperatorName
-        {
-            get { return operatorName; }
-        }
+        public IField<string> OperatorName => operatorName;
 
-        public IField<string> TesterExecutiveSoftwareType
-        {
-            get { return testerExecutiveSoftwareType; }
-        }
+        public IField<string> TesterExecutiveSoftwareType => testerExecutiveSoftwareType;
 
-        public IField<string> TesterExecutiveSoftwareVersion
-        {
-            get { return testerExecutiveSoftwareVersion; }
-        }
+        public IField<string> TesterExecutiveSoftwareVersion => testerExecutiveSoftwareVersion;
 
-        public IField<string> TestPhaseCode
-        {
-            get { return testPhaseCode; }
-        }
+        public IField<string> TestPhaseCode => testPhaseCode;
 
-        public IField<string> TestTemperature
-        {
-            get { return testTemperature; }
-        }
+        public IField<string> TestTemperature => testTemperature;
 
-        public IField<string> UserText
-        {
-            get { return userText; }
-        }
+        public IField<string> UserText => userText;
 
-        public IField<string> AuxiliaryDataFile
-        {
-            get { return auxiliaryDataFile; }
-        }
+        public IField<string> AuxiliaryDataFile => auxiliaryDataFile;
 
-        public IField<string> PackageType
-        {
-            get { return packageType; }
-        }
+        public IField<string> PackageType => packageType;
 
-        public IField<string> FamilyId
-        {
-            get { return familyId; }
-        }
+        public IField<string> FamilyId => familyId;
 
-        public IField<string> DateCode
-        {
-            get { return dateCode; }
-        }
+        public IField<string> DateCode => dateCode;
 
-        public IField<string> TestFacilityId
-        {
-            get { return testFacilityId; }
-        }
+        public IField<string> TestFacilityId => testFacilityId;
 
-        public IField<string> TestFloorId
-        {
-            get { return testFloorId; }
-        }
+        public IField<string> TestFloorId => testFloorId;
 
-        public IField<string> FabricationProcessId
-        {
-            get { return fabricationProcessId; }
-        }
+        public IField<string> FabricationProcessId => fabricationProcessId;
 
-        public IField<string> OperationFrequency
-        {
-            get { return operationFrequency; }
-        }
+        public IField<string> OperationFrequency => operationFrequency;
 
-        public IField<string> TestSpecificationName
-        {
-            get { return testSpecificationName; }
-        }
+        public IField<string> TestSpecificationName => testSpecificationName;
 
-        public IField<string> TestSpecificationVersion
-        {
-            get { return testSpecificationVersion; }
-        }
+        public IField<string> TestSpecificationVersion => testSpecificationVersion;
 
-        public IField<string> TestFlowId
-        {
-            get { return testFlowId; }
-        }
+        public IField<string> TestFlowId => testFlowId;
 
-        public IField<string> TestSetupId
-        {
-            get { return testSetupId; }
-        }
+        public IField<string> TestSetupId => testSetupId;
 
-        public IField<string> DeviceDesignRevision
-        {
-            get { return deviceDesignRevision; }
-        }
+        public IField<string> DeviceDesignRevision => deviceDesignRevision;
 
-        public IField<string> EngineeringLotId
-        {
-            get { return engineeringLotId; }
-        }
+        public IField<string> EngineeringLotId => engineeringLotId;
 
-        public IField<string> RomCodeId
-        {
-            get { return romCodeId; }
-        }
+        public IField<string> RomCodeId => romCodeId;
 
-        public IField<string> TesterSerialNumber
-        {
-            get { return testerSerialNumber; }
-        }
+        public IField<string> TesterSerialNumber => testerSerialNumber;
 
-        public IField<string> SupervisorName
-        {
-            get { return supervisorName; }
-        }
-   }
+        public IField<string> SupervisorName => supervisorName;
+    }
 }

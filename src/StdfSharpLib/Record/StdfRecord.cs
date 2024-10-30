@@ -51,16 +51,10 @@ namespace KA.StdfSharp.Record
             }
         }
 
-        public byte Type
-        {
-            get { return attribute.Type;  }
-        }
+        public byte Type => attribute.Type;
 
-        public byte Subtype
-        {
-            get { return attribute.Subtype; }
-        }
-        
+        public byte Subtype => attribute.Subtype;
+
         /// <summary>
         /// Returns a field named <code>name</code>.
         /// </summary>
@@ -175,7 +169,7 @@ namespace KA.StdfSharp.Record
         private void WriteHeader(BinaryWriter writer)
         {
             Debug.Assert(header != null);
-            header.Lenght = Length;
+            header.Length = Length;
             header.Type = attribute.Type;
             header.Subtype = attribute.Subtype;
             header.Write(writer);

@@ -42,10 +42,7 @@ namespace KA.StdfSharp.Record.Field
         /// <summary>
         /// Returns the size in bytes of this field.
         /// </summary>
-        public override ushort Size
-        {
-            get { return Convert.ToUInt16(sizeof(char) * length); }
-        }
+        public override ushort Size => Convert.ToUInt16(sizeof(char) * length);
 
         /// <summary>
         /// Reads this field's value form the binary reader.

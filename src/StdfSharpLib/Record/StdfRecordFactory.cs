@@ -75,12 +75,9 @@ namespace KA.StdfSharp.Record
         private StdfRecordFactory()
         {
         }
-        
-        public static StdfRecordFactory Instance
-        {
-            get { return instance; }
-        }
-        
+
+        public static StdfRecordFactory Instance => instance;
+
         /// <summary>
         /// Creates an empty record of <code>type</code> and <code>subtype</code> specified by <code>header</code>.
         /// </summary>
@@ -92,7 +89,7 @@ namespace KA.StdfSharp.Record
         internal StdfRecord CreateRecord(StdfHeader header)
         {
             StdfRecord record = CreateRecord(header.Type, header.Subtype);
-            record.Length = header.Lenght;
+            record.Length = header.Length;
             return record;
         }
 

@@ -35,14 +35,8 @@ namespace KA.StdfSharp.Record.Field
         {
             Reset();
         }
-        
-        public override ushort Size
-        {
-            get
-            {
-                return Convert.ToUInt16(Value.Length + 1);
-            }
-        }
+
+        public override ushort Size => Convert.ToUInt16(Value.Length + 1);
 
         protected override void ReadValue(BinaryReader reader)
         {

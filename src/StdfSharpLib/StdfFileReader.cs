@@ -41,20 +41,11 @@ namespace KA.StdfSharp
             attribute = StdfRecord.GetStdfRecordAttribute(this.record.GetType());
         }
 
-        public byte Type
-        {
-            get { return attribute.Type; }
-        }
+        public byte Type => attribute.Type;
 
-        public byte Subtype
-        {
-            get { return attribute.Subtype; }
-        }
+        public byte Subtype => attribute.Subtype;
 
-        public StdfRecord Record
-        {
-            get { return record; }
-        }
+        public StdfRecord Record => record;
     }
 
     public delegate void RecordReadEventHandler(object sender, RecordReadEventArgs e);
@@ -265,7 +256,7 @@ namespace KA.StdfSharp
         private StdfRecord ReadRecord(StdfHeader h, RecordReadEventHandler d)
         {
             StdfRecord record = factory.CreateRecord(h.Type, h.Subtype);
-            record.Length = h.Lenght;
+            record.Length = h.Length;
             record.Read(reader);
             RecordReadEventArgs e = new RecordReadEventArgs(record);
             OnRecordRead(e);
@@ -311,7 +302,7 @@ namespace KA.StdfSharp
 
         private void SkipRecord()
         {
-            reader.BaseStream.Position += header.Lenght;
+            reader.BaseStream.Position += header.Length;
         }
 
         private StdfHeader ReadRecordHeader()

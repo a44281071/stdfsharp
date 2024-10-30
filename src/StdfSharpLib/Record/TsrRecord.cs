@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: TsrRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp
@@ -29,7 +29,8 @@ using KA.StdfSharp.Record.Field;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the TSR record of STDF.
+    /// Test Synopsis Record (TSR)
+    /// 测试概要记录 （TSR）
     /// </summary>
     [StdfRecord(10, 30)]
     public class TsrRecord : StdfRecord
@@ -140,81 +141,36 @@ namespace KA.StdfSharp.Record
             AddField(FieldName.TST_SUMS.ToString(), resultValuesSum);
             AddField(FieldName.TST_SQRS.ToString(), resultValuesSquareSum);
         }
-        
-        public IField<byte> HeadNumber
-        {
-            get { return headNumber; }
-        }
 
-        public IField<byte> SiteNumber
-        {
-            get { return siteNumber; }
-        }
+        public IField<byte> HeadNumber => headNumber;
 
-        public IField<char> TestType
-        {
-            get { return testType; }
-        }
+        public IField<byte> SiteNumber => siteNumber;
 
-        public IField<uint> TestNumber
-        {
-            get { return testNumber; }
-        }
+        public IField<char> TestType => testType;
 
-        public IField<uint> ExecutionCount
-        {
-            get { return executionCount; }
-        }
+        public IField<uint> TestNumber => testNumber;
 
-        public IField<uint> FailCount
-        {
-            get { return failCount; }
-        }
+        public IField<uint> ExecutionCount => executionCount;
 
-        public IField<uint> AlarmCount
-        {
-            get { return alarmCount; }
-        }
+        public IField<uint> FailCount => failCount;
 
-        public IField<string> TestName
-        {
-            get { return testName; }
-        }
+        public IField<uint> AlarmCount => alarmCount;
 
-        public IField<string> SequencerName
-        {
-            get { return sequencerName; }
-        }
+        public IField<string> TestName => testName;
 
-        public IField<string> TestLabel
-        {
-            get { return testLabel; }
-        }
+        public IField<string> SequencerName => sequencerName;
 
-        public IField<DateTime> ExecutionTime
-        {
-            get { return executionTime; }
-        }
+        public IField<string> TestLabel => testLabel;
 
-        public IField<float> LowestResultValue
-        {
-            get { return lowestResultValue; }
-        }
+        public IField<DateTime> ExecutionTime => executionTime;
 
-        public IField<float> HighestResultValue
-        {
-            get { return highestResultValue; }
-        }
+        public IField<float> LowestResultValue => lowestResultValue;
 
-        public IField<float> ResultValuesSum
-        {
-            get { return resultValuesSum; }
-        }
+        public IField<float> HighestResultValue => highestResultValue;
 
-        public IField<float> ResultValuesSquareSum
-        {
-            get { return resultValuesSquareSum; }
-        }
+        public IField<float> ResultValuesSum => resultValuesSum;
+
+        public IField<float> ResultValuesSquareSum => resultValuesSquareSum;
 
         private class OptionalDataFlagField : BitEncoded<TsrRecord>
         {

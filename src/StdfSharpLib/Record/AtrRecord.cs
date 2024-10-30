@@ -1,4 +1,4 @@
-/**
+﻿/**
  * $Id: AtrRecord.cs 20 2008-06-08 07:05:10Z outburst $
  * 
  * STDFSharp - Reading/writing STDF (Standard Test Data Format) library for .NET
@@ -29,7 +29,8 @@ using DateTime=System.DateTime;
 namespace KA.StdfSharp.Record
 {
     /// <summary>
-    /// Represents the ATR record of STDF.
+    /// Audit Trail Record (ATR)
+    /// 审计跟踪记录 （ATR）
     /// </summary>
     [StdfRecord(0, 20)]
     public sealed class AtrRecord : StdfRecord
@@ -59,18 +60,12 @@ namespace KA.StdfSharp.Record
         /// Represents the MOD_TIM field of ATR record.
         /// Date and time of STDF file modification
         /// </summary>
-        public IField<DateTime> ModificationDate
-        {
-            get { return modificationDate; }
-        }
+        public IField<DateTime> ModificationDate => modificationDate;
 
         /// <summary>
         /// Represents the CMD_LINE field of ATR record.
         /// Command line of program
         /// </summary>
-        public IField<string> ProgramCommandLine
-        {
-            get { return programCommandLine; }
-        }
+        public IField<string> ProgramCommandLine => programCommandLine;
     }
 }
